@@ -1,6 +1,6 @@
-* A project has been created in /tmp/tmpZ_4Psf.
+* A project has been created in /tmp/tmpTZU1ue.
 
-* A minilay has been installed in /tmp/tmpZ_4Psf/minilays/makina.fixmystreet.
+* A minilay has been installed in /tmp/tmpTZU1ue/minilays/makina.fixmystreet.
 * It contains those minilbuilds:
 	- makina.fixmystreet
 	- makina.fixmystreet-prod 

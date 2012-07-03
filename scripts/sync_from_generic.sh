@@ -15,8 +15,8 @@ minitage.buildout-dev.cfg
 minitage.buildout-prod.cfg
 README.*
 etc/
-minilays/
 "
+rsync -azv t/minilays/makina.fixmystreet/ minilays/makina.fixmystreet/
 for f in $files;do
     rsync -aKzv t/$f $f
 done
