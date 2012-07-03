@@ -1,4 +1,8 @@
 bin
+etc/wsgi
+etc/init.d
+*egg-info
+*pyc
 develop-eggs/
 etc/apache/100-makina.fixmystreet.reverseproxy.conf
 etc/forespir.env
