@@ -5,7 +5,7 @@ IMPORT_URL="ssh://gitorious-git@gitorious.makina-corpus.net/makinacorpusfixmystr
 cd $(dirname $0)/..
 [[ ! -d t ]] && mkdir t
 rm -rf t/*
-tar xzvf $(ls -1t ~/cgwb/$PROJECT*z) -C t
+tar xzvf $(ls -1t ~/cgwb/$PROJECT*z|head -n1) -C t
 files="
 .gitignore
 bootstrap.py
@@ -16,7 +16,6 @@ minitage.buildout-prod.cfg
 README.*
 etc/
 minilays/
-scripts/
 "
 for f in $files;do
     rsync -aKzv t/$f $f
@@ -28,23 +27,23 @@ core_folder="src.mrdeveloper/$PROJECT.core"
 if [[ ! -e $core_folder ]];then
     core_folder="src/$PROJECT.core"
 fi
-for i in $core;do
-    rsync -azKv t/src/$PROJECT.core/src/$PROJECT/core/$i src.mrdeveloper/$PROJECT.core/src/$PROJECT/core/$i
-done
+#for i in $core;do
+#    rsync -azKv t/src/$PROJECT.core/src/$PROJECT/core/$i src.mrdeveloper/$PROJECT.core/src/$PROJECT/core/$i
+#done
 EGGS_IMPORT_URL="${IMPORT_URL//\/$PROJECT\.buildout}"
-sed -re "/\[sources\]/{
-        a $PROJECT.core =  git $EGGS_IMPORT_URL/$PROJECT.core
-}" -i  etc/project/sources.cfg
-sed -re "s:(src/)?$PROJECT\.((skin)|(tma)|(core)|(testing))::g" -i etc/project/$PROJECT.cfg
-sed -re "/auto-checkout \+=/{
-        a \    $PROJECT.core
-}"  -i etc/project/sources.cfg
-sed -re "/eggs \+=.*buildout:eggs/{
-        a \    $PROJECT.core
-}"  -i etc/project/$PROJECT.cfg
-sed -re "/zcml \+=/{
-        a \    $PROJECT.core
-}"  -i etc/project/$PROJECT.cfg
+#sed -re "/\[sources\]/{
+#        a $PROJECT.core =  git $EGGS_IMPORT_URL/$PROJECT.core
+#}" -i  etc/project/sources.cfg
+#sed -re "s:(src/)?$PROJECT\.((skin)|(tma)|(core)|(testing))::g" -i etc/project/$PROJECT.cfg
+#sed -re "/auto-checkout \+=/{
+#        a \    $PROJECT.core
+#}"  -i etc/project/sources.cfg
+#sed -re "/eggs \+=.*buildout:eggs/{
+#        a \    $PROJECT.core
+#}"  -i etc/project/$PROJECT.cfg
+#sed -re "/zcml \+=/{
+#        a \    $PROJECT.core
+#}"  -i etc/project/$PROJECT.cfg
 sed -re "s/.*:default/    ${PROJECT}.core:default/g" -i  etc/project/$PROJECT.cfg
 sed -re "s/(extends=.*)/\1 etc\/sys\/settings-prod.cfg/g" -i buildout-prod.cfg
 sed -re "/\[buildout\]/ {
