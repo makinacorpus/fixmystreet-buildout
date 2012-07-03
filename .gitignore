@@ -23,3 +23,6 @@ sys
 t
 var
 src.mrdeveloper/zopelib/zopelib.egg-info
+etc/logrotate.conf
+etc/sys/settings-prod.cfg
+
