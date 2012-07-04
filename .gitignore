@@ -1,4 +1,6 @@
 bin
+README.pos*
+tags.python
 etc/wsgi
 etc/init.d
 *egg-info
