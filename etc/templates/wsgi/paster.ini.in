@@ -6,6 +6,7 @@ debug=${instance:debug}
 use=egg:Paste#urlmap
 /media/=pmedia
 /admin/media/=padminmedia
+/admin_media/=padminmedia
 /=pmain
 /threads/=watch_threads
 
@@ -46,22 +47,11 @@ error_subject_prefix = "mobyle2 Error"
 
 [app:projectapp]
 use=egg:dj.paste
-django_settings_module=makina.fixmystreet.settings
+django_settings_module=fixmystreet.settings
 
 [app:mediaapp]
-use = egg:Paste#pkg_resources
-egg = makina.fixmystreet
-resource_name=media/
-
-[app:adminmediaapp]
-resource_name=static/
-egg = Django
-resource_name=django/contrib/admin/media/ 
-
-[app:mediaapp]
-use = egg:Paste#pkg_resources
-egg = makina.fixmystreet
-resource_name=media/
+use = egg:Paste#static
+document_root = ${buildout:directory}/src.mrdeveloper/fixmystreet/media
 
 [app:adminmediaapp]
 use = egg:Paste#pkg_resources
