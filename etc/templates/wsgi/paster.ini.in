@@ -37,26 +37,31 @@ use=egg:Paste#printdebug
 use=egg:dj.paste#weberror
 debug = true
 error_email = mpa@makina-corpus.com
-from_address = mobyle@test.com 
+from_address = mobyle@test.com
 ;show_exceptions_in_wsgi_errors = true
 smtp_server = localhost
-;smtp_use_tls = 
+;smtp_use_tls =
 ;smtp_username = janitor
 ;smtp_password = "janitor's password"
 error_subject_prefix = "mobyle2 Error"
 
 [app:projectapp]
 use=egg:dj.paste
-django_settings_module=fixmystreet.settings
+django_settings_module=${instance:dsm}
+
+#[app:mediaapp]
+#use = egg:Paste#static
+#document_root = ${buildout:directory}/src.mrdeveloper/fixmystreet/media
 
 [app:mediaapp]
-use = egg:Paste#static
-document_root = ${buildout:directory}/src.mrdeveloper/fixmystreet/media
+use = egg:Paste#pkg_resources
+egg = django_fixmystreet
+resource_name=django_fixmystreet/media/
 
 [app:adminmediaapp]
 use = egg:Paste#pkg_resources
 egg = Django
-resource_name=django/contrib/admin/media/
+resource_name=django/contrib/admin/media/ 
 
 [loggers]
 keys = root,wsgi,routes
