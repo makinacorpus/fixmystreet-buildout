@@ -1,0 +1,131 @@
+[
+    {
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "domain": "ville.terralego.com",
+            "name": "ville.terralego.com"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:8000",
+            "name": "localhost"
+        }
+    },
+    {
+      "pk": 3,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:30004",
+            "name": "localhost30004"
+        }
+    },
+    {
+      "pk": 4,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:30005",
+            "name": "localhost30005"
+        }
+    },
+    {
+      "pk": 5,
+        "model": "sites.site",
+        "fields": {
+            "domain": "localhost:30006",
+            "name": "localhost30006"
+        }
+    },  
+    {
+      "pk": 2,
+        "model": "django_fixmystreet.province",
+        "fields": {
+            "abbrev": "FR",
+            "name": "France"
+        }
+    },
+    {
+      "pk": 3,
+        "model": "django_fixmystreet.province",
+        "fields": {
+            "abbrev": "TN",
+            "name": "Tunisie"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "django_fixmystreet.city",
+        "fields": {
+            "name": "Le Mans",
+            "slug": "lemans",
+            "email": "foo@bar.com",
+            "province": 2
+        }
+    },
+    {
+      "pk": 3,
+        "model": "django_fixmystreet.city",
+        "fields": {
+            "name": "Tunis",
+            "slug": "tunis",
+            "email": "foo@foo.com",
+            "province": 3
+        }
+    },
+    {
+      "pk": 7,
+        "model": "django_fixmystreet.councillor",
+        "fields": {
+            "first_name": "Mathieu",
+            "last_name": "Le Marec - Pasquet",
+            "email": "mpa@makina-corpus.com"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "django_fixmystreet.ward",
+        "fields": {
+            "city": 2,
+            "number": 7,
+            "name": "Mans-Centre",
+            "councillor": 7,
+            "slug": "mans-centre"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "django_fixmystreet.ward",
+        "fields": {
+            "number": 8,
+            "city": 2,
+            "name": "Mans-Ville-Est",
+            "councillor": 7,
+            "slug": "mans-ville-est"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "django_fixmystreet.ward",
+        "fields": {
+            "number": 9,
+            "city": 3,
+            "name": "La Médina",
+            "councillor": 7,
+            "slug": "la-medina"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "django_fixmystreet.ward",
+        "fields": {
+            "number": 10,
+            "city": 3,
+            "name": "Bab Bhar",
+            "councillor": 7,
+            "slug": "bab-bhar"
+        }
+    }
+]
