@@ -56,16 +56,6 @@
         }
     },
     {
-        "pk": 2,
-        "model": "django_fixmystreet.city",
-        "fields": {
-            "name": "Le Mans",
-            "slug": "lemans",
-            "email": "foo@bar.com",
-            "province": 2
-        }
-    },
-    {
       "pk": 3,
         "model": "django_fixmystreet.city",
         "fields": {
@@ -85,28 +75,6 @@
         }
     },
     {
-        "pk": 7,
-        "model": "django_fixmystreet.ward",
-        "fields": {
-            "city": 2,
-            "number": 7,
-            "name": "Mans-Centre",
-            "councillor": 7,
-            "slug": "mans-centre"
-        }
-    },
-    {
-        "pk": 8,
-        "model": "django_fixmystreet.ward",
-        "fields": {
-            "number": 8,
-            "city": 2,
-            "name": "Mans-Ville-Est",
-            "councillor": 7,
-            "slug": "mans-ville-est"
-        }
-    },
-    {
         "pk": 9,
         "model": "django_fixmystreet.ward",
         "fields": {
@@ -114,6 +82,7 @@
             "city": 3,
             "name": "La Médina",
             "councillor": 7,
+            "geom": "MULTIPOLYGON (((0.1958 47.9937, 0.2163 47.9957, 0.2201 47.9853, 0.2049 47.9806, 0.1958 47.9937)))", 
             "slug": "la-medina"
         }
     },
@@ -125,6 +94,7 @@
             "city": 3,
             "name": "Bab Bhar",
             "councillor": 7,
+            "geom": "MULTIPOLYGON (((0.1958 47.9937, 0.2163 47.9957, 0.2201 47.9853, 0.2049 47.9806, 0.1958 47.9937)))", 
             "slug": "bab-bhar"
         }
     }

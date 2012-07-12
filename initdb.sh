@@ -21,5 +21,6 @@ fixmystreet.createdb -U $(whoami) fixmystreet -T template_postgis -O fixmystreet
 echo 'alter user fixmystreet with superuser' | fixmystreet.psql  -U $(whoami)
 ./bin/fixmystreet_manage syncdb --noinput
 ./bin/fixmystreet_manage createsuperuser --username=k --email=mpa@makina-corpus.com
-./bin/fixmystreet_manage loaddata makina
+./bin/fixmystreet_manage loaddata $PWD/makina.json
+./bin/fixmystreet_manage loaddata $PWD/lemans.json
 # vim:set et sts=4 ts=4 tw=80:
