@@ -23,4 +23,5 @@ echo 'alter user fixmystreet with superuser' | fixmystreet.psql  -U $(whoami)
 ./bin/fixmystreet_manage createsuperuser --username=fixmystreet --email=mpa@makina-corpus.com
 ./bin/fixmystreet_manage loaddata $PWD/makina.json
 ./bin/fixmystreet_manage loaddata $PWD/lemans.json
+./bin/fixmystreet_manage loaddata $PWD/tunis.json
 # vim:set et sts=4 ts=4 tw=80:

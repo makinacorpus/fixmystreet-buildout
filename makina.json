@@ -56,46 +56,12 @@
         }
     },
     {
-      "pk": 3,
-        "model": "django_fixmystreet.city",
-        "fields": {
-            "name": "Tunis",
-            "slug": "tunis",
-            "email": "foo@foo.com",
-            "province": 3
-        }
-    },
-    {
       "pk": 7,
         "model": "django_fixmystreet.councillor",
         "fields": {
             "first_name": "Mathieu",
             "last_name": "Le Marec - Pasquet",
             "email": "mpa@makina-corpus.com"
-        }
-    },
-    {
-        "pk": 9,
-        "model": "django_fixmystreet.ward",
-        "fields": {
-            "number": 9,
-            "city": 3,
-            "name": "La Médina",
-            "councillor": 7,
-            "geom": "MULTIPOLYGON (((0.1958 47.9937, 0.2163 47.9957, 0.2201 47.9853, 0.2049 47.9806, 0.1958 47.9937)))", 
-            "slug": "la-medina"
-        }
-    },
-    {
-        "pk": 10,
-        "model": "django_fixmystreet.ward",
-        "fields": {
-            "number": 10,
-            "city": 3,
-            "name": "Bab Bhar",
-            "councillor": 7,
-            "geom": "MULTIPOLYGON (((0.1958 47.9937, 0.2163 47.9957, 0.2201 47.9853, 0.2049 47.9806, 0.1958 47.9937)))", 
-            "slug": "bab-bhar"
         }
     }
 ]
