@@ -1,13 +1,13 @@
 # bv.clientb WSGI CONFIGURATION FILE
 [DEFAULT]
-debug=${instance:debug}
+debug=${options.debug}
 
 [composite:main]
 use=egg:Paste#urlmap
+{% if options.debug=='false' %}
 /static/=pstatic
 /media/=pmedia
-#/admin/media/=padminmedia
-#/admin_media/=padminmedia
+{% end %}
 /=pmain
 /threads/=watch_threads
 
@@ -51,11 +51,11 @@ error_subject_prefix = "mobyle2 Error"
 
 [app:projectapp]
 use=egg:dj.paste
-django_settings_module=${instance:dsm}
+django_settings_module=${options.dsm}
 
 #[app:mediaapp]
 #use = egg:Paste#static
-#document_root = ${buildout:directory}/src.mrdeveloper/fixmystreet/media
+#document_root = ${parts.buildout.directory}/src.mrdeveloper/fixmystreet/media
 
 [app:staticapp]
 use = egg:Paste#pkg_resources
@@ -111,7 +111,7 @@ formatter = generic
 # Handler for writing access.log style log lines to an "access.log" file
 [handler_fconsole]
 class = FileHandler
-args = ('${buildout:directory}/var/log/console.log','a')
+args = ('${parts.buildout.directory}/var/log/console.log','a')
 level = INFO
 formatter = generic
 
@@ -119,14 +119,14 @@ formatter = generic
 # Handler for writing access.log style log lines to an "access.log" file
 [handler_accesslog]
 class = FileHandler
-args = ('${buildout:directory}/var/log/access.log','a')
+args = ('${parts.buildout.directory}/var/log/access.log','a')
 level = INFO
 formatter = accesslog
 
 # Handler for writing error messages to an "error.log" file
 [handler_errorlog]
 class = FileHandler
-args = ('${buildout:directory}/var/log/error.log','a')
+args = ('${parts.buildout.directory}/var/log/error.log','a')
 level = WARNING
 formatter = generic
 
@@ -141,7 +141,8 @@ format = %(message)s
 
 [server:main]
 use=egg:Paste#http
-host=${host}
-port=${port}
+host=${options.host}
+port=${options.port}
 
 # vim:set et ts=4 sts=4 ft=cfg:
+{% end %}
