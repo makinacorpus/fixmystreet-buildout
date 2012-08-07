@@ -4,14 +4,18 @@ debug=${instance:debug}
 
 [composite:main]
 use=egg:Paste#urlmap
+/static/=pstatic
 /media/=pmedia
-/admin/media/=padminmedia
-/admin_media/=padminmedia
+#/admin/media/=padminmedia
+#/admin_media/=padminmedia
 /=pmain
 /threads/=watch_threads
 
 [pipeline:pmain]
 pipeline= fvhm exc translogger projectapp
+
+[pipeline:pstatic]
+pipeline= fvhm translogger exc staticapp
 
 [pipeline:pmedia]
 pipeline= fvhm translogger exc mediaapp
@@ -53,6 +57,11 @@ django_settings_module=${instance:dsm}
 #use = egg:Paste#static
 #document_root = ${buildout:directory}/src.mrdeveloper/fixmystreet/media
 
+[app:staticapp]
+use = egg:Paste#pkg_resources
+egg = django_fixmystreet
+resource_name=django_fixmystreet/static_root/
+
 [app:mediaapp]
 use = egg:Paste#pkg_resources
 egg = django_fixmystreet
@@ -61,7 +70,7 @@ resource_name=django_fixmystreet/media/
 [app:adminmediaapp]
 use = egg:Paste#pkg_resources
 egg = Django
-resource_name=django/contrib/admin/media/ 
+resource_name=django/contrib/admin/static/
 
 [loggers]
 keys = root,wsgi,routes
