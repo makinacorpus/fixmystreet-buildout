@@ -1,4 +1,10 @@
 bin
+local
+downloads
+eggs
+local 
+lib
+include
 README.pos*
 tags.python
 etc/wsgi
