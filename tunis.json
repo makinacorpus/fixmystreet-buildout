@@ -1,7 +1,7 @@
 [
     {
         "fields": {
-            "email": "mpa@makina-corpus.com", 
+            "email": "foo@bar.com", 
             "name": "Tunis", 
             "province": 3, 
             "slug": "tunis"
