@@ -87,6 +87,7 @@ def main():
         u"Beni Khalled",
         u"Beni Khedache",
         u"Beni Khiar",
+        u"Berges du lac",
         u"Bir Ali Ben Khélifa",
         u"Bir El Hfay",
         u"Bir Lahmar",
